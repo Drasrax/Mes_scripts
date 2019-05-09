@@ -1,9 +1,35 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-command echo "########################################################"
-command echo -e "################ \e[100mInstallation de Katello\e[49m ###############"
-command echo "########################################################"
+#########################
+#
+# NAME Katello Installation Base
+#
+#
+# DATE 08/05/2019
+#
+#########################
 
+#########################
+# SETTINGS              #
+#                       #
+#########################
+export LANG=C
+
+#########################
+# LIB                   #
+#########################
+
+#########################
+# CONSTANTE             #
+#########################
+
+#########################
+# VARIABLE              #
+#########################
+
+#########################
+# FUNCTION              #
+#########################
 
 check_retour()
     {
@@ -35,7 +61,7 @@ machine_config()
         command firewall-cmd --permanent --zone=public --add-port=8140/tcp --add-port=8443/tcp --add-port=8000/tcp --add-port=67/udp --add-port=68/udp --add-port=69/udp &> /var/log/install_katello/install.log 2> /var/log/install_katello/errors.log
         check_retour
         command echo -n "---- Reload firewalld ----     " 
-        command firewall-cmd –reload &> /var/log/install_katello/install.log 2> /var/log/install_katello/errors.log
+        command systemctl restart firewalld &> /var/log/install_katello/install.log 2> /var/log/install_katello/errors.log
         check_retour
         command echo -n "---- Config NTP ----       "
         check_retour
@@ -112,61 +138,28 @@ Katello_adm_passwd()
 
     }
 
-echo "###### Création des fichiers de logs"
-create_logfiles
-clear
+#########################
+# SCRIPT              #
+#########################
+
 command echo "########################################################"
 command echo -e "################ \e[100mInstallation de Katello\e[49m ###############"
 command echo "########################################################"
-command echo "###### Configuration de la machine... ######"
-command echo "\n \n"
+create_logfiles
 command echo -e "----------------- \e[91mTasks:\e[39m -----------------"
 machine_config
-clear
-command echo "########################################################"
-command echo -e "################ \e[100mInstallation de Katello\e[49m ###############"
-command echo "########################################################"
-command echo "###### Configuration du packager ######"
-command echo "\n \n"
-command echo -e "----------------- \e[91mTasks:\e[39m -----------------"
 yum_config
-clear
-command echo "########################################################"
-command echo -e "################ \e[100mInstallation de Katello\e[49m ###############"
-command echo "########################################################"
-command echo "###### Configuration des repositories ######"
-command echo "\n \n"
-command echo -e "----------------- \e[91mTasks:\e[39m -----------------"
 yum_repo_conf
-clear
-command echo "########################################################"
-command echo -e "################ \e[100mInstallation de Katello\e[49m ###############"
-command echo "########################################################"
-command echo "###### Upgrade de la distribution ######"
-command echo "\n \n"
-command echo -e "----------------- \e[91mTasks:\e[39m -----------------"
 upgrade_distro
-clear
-command echo "########################################################"
-command echo -e "################ \e[100mInstallation de Katello\e[49m ###############"
-command echo "########################################################"
-echo "###### Installation du package katello ######"
-command echo "\n \n"
-command echo -e "----------------- \e[91mTasks:\e[39m -----------------"
 install_katello_pack
-clear
-command echo "########################################################"
-command echo -e "################ \e[100mInstallation de Katello\e[49m ###############"
-command echo "########################################################"
-command echo "###### Katello config (scenario de base) ######"
-command echo "\n \n"
-command echo -e "----------------- \e[91mTasks:\e[39m -----------------"
 Katello_config
+sleep 60
 clear
 command echo "########################################################"
 command echo -e "################ \e[100mInstallation de Katello\e[49m ###############"
 command echo "########################################################"
 command echo "###### Configuration des users ######"
-command echo "\n \n"
-command echo -e "----------------- \e[91mTasks:\e[39m -----------------"
+command echo -e "\n \n"
+command echo "On patiente 5 minutes le temps que Katello démarre..."
+command sleep 300
 Katello_adm_passwd
