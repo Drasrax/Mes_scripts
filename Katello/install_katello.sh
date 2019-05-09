@@ -5,7 +5,9 @@
 # NAME Katello Installation Base
 #
 #
-# DATE 08/05/2019
+# CREATING DATE 08/05/2019
+#
+# LAST RELEASE 09/05/2019
 #
 #########################
 
