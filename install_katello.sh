@@ -31,6 +31,16 @@ export LANG=C
 # FUNCTION              #
 #########################
 
+only_root()
+{
+    if [ $(id -u) != "0" ]
+        then
+                echo_rouge "Ce script nécéssite les droits sudoer ou root"
+        
+        exit 1
+    fi
+}
+
 check_retour()
     {
         if [ $? -eq "0" ]
@@ -141,7 +151,7 @@ Katello_adm_passwd()
 #########################
 # SCRIPT              #
 #########################
-
+only_root
 command echo "########################################################"
 command echo -e "################ \e[100mInstallation de Katello\e[49m ###############"
 command echo "########################################################"
