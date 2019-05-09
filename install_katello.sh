@@ -48,6 +48,8 @@ check_retour()
             command echo -e "[\e[92mOk\e[39m]"
         else
             command echo -e "[\e[91mFailed\e[39m]"
+            command echo "Installation arrêtée il semble y avoir un problème.\nPour plus d'informations \nconsultez les fichiers /var/log/install_katello/errors.log et /var/log/install_katello/install.log "
+            command exit 1
        fi
 
     }
