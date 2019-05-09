@@ -37,7 +37,7 @@ only_root()
 {
     if [ $(id -u) != "0" ]
         then
-                echo_rouge "Ce script nécéssite les droits sudoer ou root"
+                command echo "Ce script nécéssite les droits sudoer ou root"
         
         exit 1
     fi
