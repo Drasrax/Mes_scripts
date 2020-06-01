@@ -5,11 +5,6 @@
 Ces scripts et programmes ont pour la plupart étés réalisés sur Centos 7, 8, Fedora 29, 30, 31 .
 
 
-
-[TOC]
-
-
-
 ### Les différents scripts :
 
 ------- A Venir ------
