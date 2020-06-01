@@ -248,7 +248,7 @@ if (uid == 0)
       if (wifilock == 0)
       {
         printf("[");
-        printf(GREEN "Lock" RESET);
+        printf(RED "Lock" RESET);
         printf("]: ");
         printf("Le Wifi est bloqué.\n");
       }
@@ -262,7 +262,7 @@ if (uid == 0)
       if (usblock == 0)
       {
         printf("[");
-        printf(GREEN "Lock" RESET);
+        printf(RED "Lock" RESET);
         printf("]: ");
         printf("L'USB est bloqué.\n");
       }
@@ -276,7 +276,7 @@ if (uid == 0)
       if (bluetoothlock == 0)
       {
         printf("[");
-        printf(GREEN "Lock" RESET);
+        printf(RED "Lock" RESET);
         printf("]: ");
         printf("Le Bluetooth est bloqué.\n");
       }
