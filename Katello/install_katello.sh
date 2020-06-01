@@ -148,7 +148,7 @@ Katello_adm_passwd()
         command echo -n "---- Modification du compte admin ----     "
         foreman_adm=$(foreman-rake permissions:reset 2> /var/log/install_katello/errors.log | grep "password:" | cut -d ':' -f3 | cut -d ' ' -f2 >> /var/log/install_katello/adm.log)
         check_retour
-        command echo -e "Utilisateur:   admin \nMot de passe:   $foreman_adm \nCe mot de passe est sauvegrdé dans /var/log/install_katello/adm.log. \nPensez a supprimé le fichier une fois le mot de passe noté."
+        command echo -e "Utilisateur:   admin \nMot de passe:   $foreman_adm \nCe mot de passe est sauvegardé dans /var/log/install_katello/adm.log. \nPensez a supprimé le fichier une fois le mot de passe noté."
 
     }
 
