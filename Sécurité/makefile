@@ -8,3 +8,4 @@ seclocker:
 
 trackfic:
         gcc -o bin/tackfic trackfic.c
+        mkdir ../data
