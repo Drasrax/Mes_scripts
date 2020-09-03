@@ -73,7 +73,7 @@ yum install gcc, cmake
 Pour la compilation vous avez deux choix exécuté la commande suivante :
 
 ```bash
-gcc -o trackfic trckfic.c && mkdir ../data
+gcc -o trackfic trackfic.c && mkdir ../data
 ```
 
 
