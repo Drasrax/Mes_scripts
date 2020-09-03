@@ -4,8 +4,8 @@ complete:seclocker trackficall
 
 
 seclocker: 
-        gcc -o bin/seclocker seclocker.c
+        gcc -o seclocker seclocker.c
 
 trackfic:
-        gcc -o bin/tackfic trackfic.c
+        gcc -o tackfic trackfic.c
         mkdir ../data
