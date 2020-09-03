@@ -12,7 +12,6 @@ Ces scripts et programmes ont pour la plupart étés réalisés sur Centos 7, 8,
 ### Les programmes :
 
 
-
 #### SecLocker :
 
 ##### Présentation :
@@ -50,5 +49,37 @@ gcc -o seclocker seclocker.c
 Ou via le fichier cmake :
 
 ```bash
-make SecLocker && make secinstall
+make secLocker
 ```
+
+
+#### Trackfic :
+
+##### Présentation :
+Trackfic est un outil de capture d'entrée et sortie des interfaces réseau d'une machine les données sont stockées dans le répertoire ../data/ il permet une analyse textuelle par la suite avec la possibilité de le parsé de façon simple afin de rechercher un éventuel trafic indésirable.
+
+##### Installation :
+
+
+
+Pour l'installation vous devez disposer d'un compilateur (celui que j'utilise pour ce programme est tout simplement gcc ).
+
+Si vous n'avez pas gcc et que vous souhaitez l'installer :
+
+```bash
+yum install gcc, cmake
+```
+
+Pour la compilation vous avez deux choix exécuté la commande suivante :
+
+```bash
+gcc -o trackfic trckfic.c && mkdir ../data
+```
+
+
+Ou via le fichier cmake :
+
+```bash
+make trackfic
+```
+
