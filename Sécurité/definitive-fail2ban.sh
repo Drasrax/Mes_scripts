@@ -92,12 +92,15 @@ unlock_ip()
     if [[ -z "$checkexist" ]]; then
       echo -e "[\e[93m$1\e[39m] has not locked in iptables"
     else
-      iptables -D INPUT -s $1 -j 
+      iptables -D INPUT -s $1 -j DROP
+      echo -n "Unlock ip [$1]"
+      check_retour
     fi
   else
    echo "\e[91m$1 is not an valid ip address !\e[39m"
   fi
 }
+
 
 check_and_lock()
 {
