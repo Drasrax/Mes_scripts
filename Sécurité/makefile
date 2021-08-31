@@ -1,11 +1,11 @@
 all: complete
 
-complete:seclocker trackficall
+complete:seclocker trackfic
 
 
 seclocker: 
-        gcc -o seclocker seclocker.c
+	gcc -o seclocker seclocker.c
 
 trackfic:
-        gcc -o tackfic trackfic.c
-        mkdir ../data
+	gcc -o trackfic trackfic.c
+	mkdir ../data
